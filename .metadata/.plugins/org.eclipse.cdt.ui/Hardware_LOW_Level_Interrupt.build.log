@@ -1,0 +1,21 @@
+14:46:09 **** Build of configuration Default for project Hardware_LOW_Level_Interrupt ****
+make all 
+avr-gcc -std=gnu99 -Wall -Os -DF_CPU=1000000 -mmcu=atmega324p  -o main.o main.c
+avr-gcc -std=gnu99 -Wall -Os -DF_CPU=1000000 -mmcu=atmega324p -o main.elf main.c
+avr-objcopy -j .text -j .data -O ihex main.elf main.hex
+avr-size --format=avr --mcu=atmega324p main.elf
+AVR Memory Usage
+----------------
+Device: atmega324p
+
+Program:     304 bytes (0.9% Full)
+(.text + .data + .bootloader)
+
+Data:          2 bytes (0.1% Full)
+(.data + .bss + .noinit)
+
+
+Succes compiled
+
+14:46:09 Build Finished. 0 errors, 0 warnings. (took 355ms)
+
